@@ -6,6 +6,10 @@
 <body>
 <h1>Twilight</h1>
 <h2>Jeweleries</h2>
+<form action="/" method="get">
+    Поиск по названию объявления: <input type="text" name="title"><br>
+    <input type="submit" value="Search"/>
+</form>
 <#list products as product>
     <div>
         <p><b>${product.title}</b> ${product.price} $. | <a href="/product/${product.id}">More...</a></p>
