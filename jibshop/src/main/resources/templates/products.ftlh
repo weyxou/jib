@@ -17,11 +17,14 @@
 </#list>
 <hr>
 <h3>New product</h3>
-<form action="/product/create" method="post">
+<form action="/product/create" method="post" enctype="multipart/form-data">
     Title: <input type="text" name="title"/><br><br>
     Desc: <input type="text" name="description"/><br><br>
     Price: <input type="number" name="price"/><br><br>
+    Image1: <input type="file" name="file1"/><br><br>
     <input type="submit" value="Add product"/>
 </form>
+
+
 </body>
 </html>
