@@ -23,8 +23,6 @@ public class ProductService {
     }
     public void saveProduct(Product product, MultipartFile file1) throws IOException {
         Image image1;
-        Image image2;
-        Image image3;
         if (file1.getSize() != 0) {
             image1 = toImageEntity(file1);
             image1.setPreviewImage(true);
