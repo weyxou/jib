@@ -12,6 +12,7 @@
 <b>Title: </b>${product.title}<br>
 <b>Desc: </b>${product.description}<br>
 <b>Price: </b>${product.price}<br>
+<b>Admin: </b><a href="/user/${product.user.id}">${product.user.name}</a><br>
 
 <hr>
 <form action="/product/delete/${product.id}" method="post">
