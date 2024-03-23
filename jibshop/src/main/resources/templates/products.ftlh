@@ -4,9 +4,19 @@
     <title>Twilight</title>
 </head>
 <body>
-<h1>Twilight
+<h1>Twilight</h1>
 <br>
-    <a href="/login">Login</a></h1><hr>
+<#if user.email??>
+    <h3>username: ${user.name}</h3>
+    <form action="/logout" method="post">
+        <input type="hidden" name="_csrf" value="${_csrf.token}">
+        <input type="submit" value="Logout"/>
+    </form>
+<#else>
+    <a href="/login">Login</a></h1>
+</#if>
+
+<br>
 <h4>Jewelleries</h4>
 <form action="/" method="get">
     Search: <input type="text" name="title"><br>
@@ -19,6 +29,7 @@
 <#else>
     <h3>No jewelleries</h3>
 </#list>
+<#if user.email??>
 <hr>
 <h3>Add new product</h3>
 <form action="/product/create" method="post" enctype="multipart/form-data">
@@ -31,5 +42,6 @@
     <input type="hidden" name="_csrf" value="${_csrf.token}">
     <input type="submit" value="Add product"/>
 </form>
+</#if>
 </body>
 </html>
