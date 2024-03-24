@@ -4,14 +4,13 @@ import com.example.jibshop.entitys.User;
 import com.example.jibshop.services.UserService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
-import org.hibernate.engine.jdbc.mutation.spi.BindingGroup;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.validation.BindingResult;
-import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+
+import java.security.Principal;
 
 @Controller
 @RequiredArgsConstructor
@@ -19,35 +18,27 @@ public class UserController {
     private final UserService userService;
 
     @GetMapping("/login")
-    public String login() {
+    public String login(Principal principal, Model model) {
         return "login";
     }
 
     @GetMapping("/registration")
-    public String registration() {
+    public String registration(Principal principal, Model model) {
         return "registration";
     }
 
 
     @PostMapping("/registration")
-    public String createUser(@Valid User user, BindingResult result, Model model) {
-        if (result.hasErrors()) {
-            return "registration";
-        }
-
+    public String createUser(User user, Model model) {
         if (!userService.createUser(user)) {
             model.addAttribute("errorMessage", "Пользователь с email: " + user.getEmail() + " уже существует");
             return "registration";
         }
-
-        // Если пользователь валиден и email уникален, создаем пользователя
-        userService.createUser(user);
         return "redirect:/login";
     }
 
-
-
     //validation
+    
 
 //    @GetMapping("/hello")
 //    public String securityUrl() {
@@ -55,10 +46,16 @@ public class UserController {
 //    }
 
     @GetMapping("/user/{user}")
-    public String userInfo(@PathVariable("user") User user, Model model) {
+    public String userInfo(@PathVariable("user") User user, Model model, Principal principal) {
         model.addAttribute("user", user);
         model.addAttribute("products", user.getProducts());
         return "userinfo";
     }
-
+    @GetMapping("/profile")
+    public String profile(Principal principal,
+                          Model model) {
+        User user = userService.getUserByPrincipal(principal);
+        model.addAttribute("user", user);
+        return "profile";
+    }
 }
