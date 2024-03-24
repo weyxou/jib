@@ -1,8 +1,8 @@
 package com.example.jibshop.services;
 
-import com.example.jibshop.models.Image;
-import com.example.jibshop.models.Product;
-import com.example.jibshop.models.User;
+import com.example.jibshop.entitys.Image;
+import com.example.jibshop.entitys.Product;
+import com.example.jibshop.entitys.User;
 import com.example.jibshop.repositories.ProductRepo;
 import com.example.jibshop.repositories.UserRepo;
 import lombok.RequiredArgsConstructor;

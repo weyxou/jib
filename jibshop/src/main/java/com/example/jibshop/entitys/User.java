@@ -1,12 +1,11 @@
-package com.example.jibshop.models;
+package com.example.jibshop.entitys;
 
-import com.example.jibshop.models.enums.Role;
+import com.example.jibshop.entitys.enums.Role;
 import jakarta.persistence.*;
 import lombok.Data;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
-import jakarta.persistence.*;
 import java.time.LocalDateTime;
 import java.util.*;
 

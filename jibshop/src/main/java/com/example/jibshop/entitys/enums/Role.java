@@ -1,4 +1,4 @@
-package com.example.jibshop.models.enums;
+package com.example.jibshop.entitys.enums;
 
 import org.springframework.security.core.GrantedAuthority;
 

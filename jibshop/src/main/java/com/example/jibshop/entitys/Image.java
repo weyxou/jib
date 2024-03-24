@@ -1,4 +1,4 @@
-package com.example.jibshop.models;
+package com.example.jibshop.entitys;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

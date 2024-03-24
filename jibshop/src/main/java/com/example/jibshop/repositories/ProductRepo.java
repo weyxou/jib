@@ -1,6 +1,6 @@
 package com.example.jibshop.repositories;
 
-import com.example.jibshop.models.Product;
+import com.example.jibshop.entitys.Product;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;

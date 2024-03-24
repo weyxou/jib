@@ -1,6 +1,6 @@
 package com.example.jibshop.controllers;
 
-import com.example.jibshop.models.Product;
+import com.example.jibshop.entitys.Product;
 import com.example.jibshop.services.ProductService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;

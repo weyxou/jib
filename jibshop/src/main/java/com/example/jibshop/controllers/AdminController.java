@@ -1,7 +1,7 @@
 package com.example.jibshop.controllers;
 
-import com.example.jibshop.models.User;
-import com.example.jibshop.models.enums.Role;
+import com.example.jibshop.entitys.User;
+import com.example.jibshop.entitys.enums.Role;
 import com.example.jibshop.services.UserService;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -27,11 +27,11 @@ public class AdminController {
         return "admin";
     }
 
-    @PostMapping("/admin/user/ban/{id}")
-    public String userBan(@PathVariable("id") Long id) {
-        userService.banUser(id);
-        return "redirect:/admin";
-    }
+//    @PostMapping("/admin/user/ban/{id}")
+//    public String userBan(@PathVariable("id") Long id) {
+//        userService.banUser(id);
+//        return "redirect:/admin";
+//    }
 
     @GetMapping("/admin/user/edit/{user}")
     public String userEdit(@PathVariable("user") User user, Model model) {

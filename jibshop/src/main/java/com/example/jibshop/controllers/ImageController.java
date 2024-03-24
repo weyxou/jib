@@ -1,6 +1,6 @@
 package com.example.jibshop.controllers;
 
-import com.example.jibshop.models.Image;
+import com.example.jibshop.entitys.Image;
 import com.example.jibshop.repositories.ImageRepo;
 import lombok.RequiredArgsConstructor;
 import org.springframework.core.io.InputStreamResource;
