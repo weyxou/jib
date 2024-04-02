@@ -1,3 +1,6 @@
+https://youtu.be/LWw1CyqwJvQ?si=TPhM8lj5U9VQDw5H
+
+
 Project "Twilight - Jewelry"
 
 This project is a web application developed for product management, user registration and authentication. The app also provides an admin panel to view and manage products and users.
@@ -49,3 +52,4 @@ This project is being developed as part of the training. The design of the appli
 Makushova Nurzhibek Nurbekovna
 
 I will be glad to receive feedback and suggestions for improving the project!
+
